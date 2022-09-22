@@ -1,0 +1,47 @@
+@use "../scss-utils/mixins" as mixins;
+@use "../scss-utils/variables" as var;
+
+.link-navigation {
+	width: 48%;
+	@include mixins.flex(space-between, center);
+	font-size: 1.25rem;
+
+	@media screen and (min-width: 1366px) {
+		order: 2;
+		@include mixins.dimension(90%, 100%);
+		margin: 15px;
+		display: block;
+	}
+
+	&__link {
+		@include mixins.flex(center, center);
+		color: white;
+		text-decoration: none;
+		transition: 0.3s ease;
+
+		&:hover {
+			background-color: var.$primary-hover;
+		}
+
+		&--active {
+			background-color: var.$primary-active;
+		}
+
+		@media screen and (min-width: 1366px) {
+			margin-block-end: 10px;
+			padding: 10px 10px;
+			justify-content: flex-start;
+			border-radius: 8px;
+		}
+	}
+
+	&__text {
+		display: none;
+
+		@media screen and (min-width: 1366px) {
+			padding-inline-start: 15px;
+			display: block;
+			@include mixins.fontHeading(0.9rem, 500);
+		}
+	}
+}

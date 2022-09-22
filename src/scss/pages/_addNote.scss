@@ -1,0 +1,109 @@
+@use "../scss-utils/mixins" as mixins;
+@use "../scss-utils/variables" as var;
+@use "../scss-utils/inheritance";
+
+.add-note {
+	@include mixins.dimension(100%, 91vh);
+	@include mixins.flex(center, center, column);
+
+	@media screen and (min-width: 1366px) {
+		height: 100vh;
+	}
+
+	&__form {
+		@include mixins.dimension(85%, 100%);
+		@include mixins.flex(flex-start, center, column);
+	}
+
+	&__input-title-limit {
+		margin-left: auto;
+		@include mixins.fontHeading(0.7rem, 500);
+		transform: translateY(33px);
+
+		&--active {
+			color: rgb(255, 43, 43);
+		}
+	}
+
+	&__input-title {
+		all: unset;
+		@include mixins.dimension(80%, 6vh);
+		margin-inline-end: auto;
+		margin-block-end: 10px;
+		@include mixins.fontHeading(1.2rem, 700);
+		border-radius: 5px;
+		box-sizing: border-box;
+
+		&::placeholder {
+			color: rgb(160, 160, 160);
+		}
+	}
+
+	&__input-body {
+		@include mixins.dimension(100%, calc(24px * 17));
+		line-height: 24px;
+		box-sizing: border-box;
+		overflow: auto;
+
+		&:focus {
+			outline: none;
+		}
+	}
+
+	&__button-area {
+		@include mixins.dimension(100%, 8vh);
+		margin-block: auto 15px;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		justify-items: center;
+		align-items: center;
+
+		@media screen and (min-width: 1366px) {
+			margin-inline-end: 3vh;
+			display: flex;
+			justify-content: flex-end;
+			gap: 20px;
+		}
+	}
+
+	&__back {
+		@extend %button-primary;
+		@include mixins.dimension(80%, 5.5vh);
+		background-color: transparent;
+		color: var.$accent;
+		border: 2.5px solid var.$accent;
+		box-sizing: border-box;
+		transition: 0.3s ease;
+
+		@media screen and (min-width: 1366px) {
+			width: 15%;
+
+			&:hover {
+				background-color: var.$accent-hover;
+				cursor: pointer;
+			}
+		}
+	}
+
+	&__submit {
+		@extend %button-primary;
+		@include mixins.dimension(80%, 5.5vh);
+		font-weight: 500;
+		color: white;
+		transition: 0.3s ease;
+
+		@media screen and (min-width: 1366px) {
+			width: 15%;
+
+			&:hover {
+				background-color: var.$accent-hover;
+				cursor: pointer;
+			}
+		}
+	}
+}
+
+[data-placeholder]:empty:before {
+	content: attr(data-placeholder);
+	color: rgb(160, 160, 160);
+}

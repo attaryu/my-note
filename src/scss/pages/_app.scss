@@ -1,0 +1,20 @@
+@use "../scss-utils/mixins" as mixins;
+@use "../scss-utils/variables" as var;
+
+.container {
+	@include mixins.dimension(100%, 100vh);
+
+	@media screen and (min-width: 1366px) {
+		display: grid;
+		grid-template-columns: 0.5fr 2.8fr;
+	}
+}
+
+.main {
+	height: 91vh;
+	overflow-y: auto;
+
+	@media screen and (min-width: 1366px) {
+		height: 100vh;
+	}
+}

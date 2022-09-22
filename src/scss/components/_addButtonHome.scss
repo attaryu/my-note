@@ -1,0 +1,28 @@
+@use "../scss-utils/mixins" as mixins;
+@use "../scss-utils/variables" as var;
+@use "../scss-utils/inheritance";
+
+.add-button-home {
+	@extend %button-primary;
+	@include mixins.dimension(35%, 5vh);
+	color: white;
+	transition: 0.3s ease;
+
+	&:hover {
+		background-color: var.$accent-hover;
+		cursor: pointer;
+	}
+
+	@media screen and (min-width: 1366px) {
+		width: 15%;
+	}
+
+	&__icon {
+		margin-inline-end: 10px;
+		font-size: 1rem;
+	}
+
+	&__text {
+		@include mixins.fontHeading(0.8rem, 700);
+	}
+}

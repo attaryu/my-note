@@ -1,0 +1,52 @@
+@use "../scss-utils/mixins" as mixins;
+@use "../scss-utils/variables" as var;
+
+.recent {
+	width: 100%;
+
+	&__header {
+		width: 100%;
+		padding-inline: 15px;
+		padding-block: 10px;
+		@include mixins.flex(space-between, center);
+	}
+
+	&__heading {
+		@include mixins.fontHeading(1.2rem, 700);
+
+		@media screen and (min-width: 1366px) {
+			font-size: 1.5rem;
+		}
+	}
+
+	&__arrow {
+		font-size: 1.1rem;
+		color: black;
+
+		@media screen and (min-width: 1366px) {
+			font-size: 1.4rem;
+		}
+	}
+
+	&__card-container {
+		@include mixins.dimension(100%, 32vh);
+		@include mixins.flex(false, center);
+		padding: 10px;
+		background-color: var.$primary-hover;
+		overflow-x: auto;
+
+		@media screen and (min-width: 1366px) {
+			height: 50vh;
+		}
+	}
+
+	&__undefined {
+		@include mixins.dimension(100%, 32vh);
+		@include mixins.grid(false, false, center);
+		background-color: var.$primary-hover;
+
+		@media screen and (min-width: 1366px) {
+			height: 50vh;
+		}
+	}
+}

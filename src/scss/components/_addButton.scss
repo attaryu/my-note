@@ -1,0 +1,46 @@
+@use "../scss-utils/mixins" as mixins;
+@use "../scss-utils/variables" as var;
+@use "../scss-utils/inheritance";
+
+.add-button {
+	@extend %button-primary;
+	@include mixins.dimension(55px, 4.5vh);
+	color: white;
+
+	&:hover {
+		background-color: var.$accent-hover;
+		cursor: pointer;
+	}
+
+	@media screen and (min-width: 1366px) {
+		width: 170px;
+	}
+
+	&__icon {
+		font-size: 1.3rem;
+
+		@media screen and (min-width: 1366px) {
+			display: none;
+		}
+	}
+
+	&__icon-full {
+		display: none;
+
+		@media screen and (min-width: 1366px) {
+			font-size: 1rem;
+			display: block;
+			color: white;
+		}
+	}
+
+	&__text {
+		display: none;
+		@include mixins.fontHeading(0.8rem, 700);
+
+		@media screen and (min-width: 1366px) {
+			display: block;
+			padding-inline-start: 10px;
+		}
+	}
+}

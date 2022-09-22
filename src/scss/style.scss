@@ -1,0 +1,31 @@
+@use "./bases/root";
+@use "./bases/typography";
+
+@use "./pages/app";
+
+@use "./pages/welcome";
+@use "./components/profileForm";
+
+@use "./components/sidebar";
+@use "./components/profileCard";
+@use "./components/linkNavigation";
+
+@use "./pages/home";
+@use "./components/homeBanner";
+@use "./components/recent";
+@use "./components/addButtonHome";
+@use "./components/remind";
+
+@use "./pages/notes";
+@use "./components/headerPage";
+@use "./components/searchBar";
+@use "./components/addButton";
+@use "./components/showNotes";
+
+@use "./pages/addNote";
+@use "./pages/detailNote";
+
+@use "./components/card";
+@use "./components/popUp";
+@use "./components/noteNoteFound";
+@use "./pages/pageNotFound";

@@ -1,0 +1,37 @@
+@use "../scss-utils/mixins" as mixins;
+@use "../scss-utils/variables" as var;
+@use "../scss-utils/inheritance";
+
+.pop-up {
+	width: 95%;
+	margin-inline: 10px;
+	padding: 10px 0;
+	@include mixins.positioning(fixed, -8vh);
+	@include mixins.flex(center, center);
+	background-color: var.$accent;
+	border-radius: 7px;
+	z-index: 20;
+	@extend %shadow-soft;
+	transition: 0.4s ease;
+
+	@media screen and (min-width: 1366px) {
+		width: 30%;
+		top: auto;
+		bottom: -8vh;
+		right: 30vw;
+	}
+
+	&--active {
+		top: 10px;
+
+		@media screen and (min-width: 1366px) {
+			top: auto;
+			bottom: 10px;
+		}
+	}
+
+	&__text {
+		@include mixins.fontHeading(1rem, 600);
+		color: white;
+	}
+}

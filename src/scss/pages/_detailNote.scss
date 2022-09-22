@@ -1,0 +1,62 @@
+@use "../scss-utils/mixins" as mixins;
+@use "../scss-utils/variables" as var;
+@use "../scss-utils/inheritance";
+
+.detail-note {
+	@include mixins.dimension(100%, 91vh);
+	@include mixins.flex(false, center, column);
+
+	@media screen and (min-width: 1366px) {
+		height: 100vh;
+	}
+
+	&__detail-area {
+		width: 100%;
+		padding-block: 20px;
+	}
+
+	&__title {
+		@include mixins.fontHeading(1.4rem, 700);
+		padding-inline: 20px;
+	}
+
+	&__createdAt {
+		margin-block: 5px 15px;
+		font-weight: 500;
+		font-size: 0.7rem;
+		color: rgb(200, 200, 200);
+		padding-inline: 20px;
+	}
+
+	&__body {
+		height: 65vh;
+		padding: 20px;
+		overflow: auto;
+	}
+
+	&__button-area {
+		@include mixins.dimension(100%, 8vh);
+		margin-block: auto 10px;
+		@include mixins.flex(space-evenly, center);
+
+		@media screen and (min-width: 1366px) {
+			margin-inline-end: 3vw;
+			justify-content: flex-end;
+			gap: 20px;
+		}
+	}
+
+	&__button {
+		@extend %button-primary;
+		height: 40px;
+		padding: 0 20px;
+		color: white;
+		font-weight: 500;
+		transition: 0.3s ease;
+
+		&:hover {
+			background-color: var.$accent-hover;
+			cursor: pointer;
+		}
+	}
+}

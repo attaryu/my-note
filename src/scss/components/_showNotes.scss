@@ -1,0 +1,32 @@
+@use "../scss-utils/mixins" as mixins;
+@use "../scss-utils/variables" as var;
+
+.show-notes {
+	@include mixins.dimension(100%, 83vh);
+	background-color: var.$primary-hover;
+	overflow: auto;
+
+	@media screen and (min-width: 1366px) {
+		height: 92vh;
+	}
+
+	&__card-container {
+		@include mixins.flex(false, center, column);
+
+		@media screen and (min-width: 1366px) {
+			margin-block-start: 20px;
+			margin-inline: 60px;
+			flex-direction: row;
+			flex-wrap: wrap;
+		}
+
+		.card {
+			margin-block: 2.5vh;
+		}
+	}
+
+	&__undefined {
+		height: 100%;
+		@include mixins.flex(center, center);
+	}
+}

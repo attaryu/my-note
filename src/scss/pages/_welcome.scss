@@ -1,0 +1,146 @@
+@use "../scss-utils/mixins" as mixins;
+@use "../scss-utils/variables" as var;
+@use "../scss-utils/inheritance";
+
+.welcome {
+	@include mixins.dimension(100%, 100vh);
+	padding: 30px;
+	@include mixins.positioning(fixed, 0, false, false, 0);
+	@include mixins.flex(center, center, column);
+	background-color: var.$primary;
+
+	&__title {
+		@include mixins.fontHeading(1.5rem, 800, 1);
+		text-align: center;
+		color: white;
+
+		@media screen and (min-width: 768px) {
+			font-size: 2.5rem;
+		}
+
+		@media screen and (min-width: 1366px) {
+			font-size: 1.7rem;
+		}
+	}
+
+	&__myNote {
+		font-family: "Chillax", sans-serif;
+		font-size: 2.5rem;
+		font-weight: 700;
+
+		@media screen and (min-width: 768px) {
+			font-size: 3.5rem;
+		}
+
+		@media screen and (min-width: 1366px) {
+			font-size: 2.7rem;
+		}
+	}
+
+	&__figure-hero {
+		@include mixins.dimension(100%, 40vh);
+		margin-block-start: 5vh;
+		@include mixins.flex(center, center);
+	}
+
+	&__image-1 {
+		width: 63%;
+
+		@media screen and (min-width: 1366px) {
+			width: 45%;
+		}
+	}
+
+	&__body {
+		@include mixins.fontParagraph(0.8rem, 400);
+		text-align: center;
+		color: white;
+
+		@media screen and (min-width: 768px) {
+			font-size: 1.2rem;
+		}
+
+		@media screen and (min-width: 1366px) {
+			font-size: 0.9rem;
+		}
+	}
+
+	&__button-next {
+		@extend %button-primary;
+		@include mixins.dimension(35%, 5vh);
+		margin: auto;
+		margin-block-start: 5vh;
+		@include mixins.fontParagraph(0.9rem, 500);
+		@include mixins.coloring(white, var.$accent);
+		border-radius: 100px;
+		transition: 0.4s ease;
+
+		&:hover {
+			background-color: var.$accent-hover;
+			cursor: pointer;
+		}
+
+		@media screen and (min-width: 768px) {
+			font-size: 1.5rem;
+			font-weight: 600;
+		}
+
+		@media screen and (min-width: 1366px) {
+			width: 30%;
+			font-size: 1.1rem;
+		}
+	}
+
+	&__title-2 {
+		@extend .welcome__title;
+		line-height: 2.5;
+	}
+
+	&__figure-preview {
+		width: 100%;
+		padding: 15px 20px;
+		margin-block-start: 13vh;
+		@include mixins.flex(false, center);
+		gap: 10px;
+		background-color: white;
+		border-radius: 8px;
+		@extend %shadow-medium;
+
+		@media screen and (min-width: 768px) {
+			width: 600px;
+			padding: 25px 30px;
+			margin-inline: auto;
+			border-radius: 11px;
+		}
+
+		@media screen and (min-width: 1366px) {
+			width: 450px;
+			padding: 22px 27px;
+			border-radius: 10px;
+		}
+	}
+
+	&__image-user {
+		width: 25%;
+		border-radius: 100%;
+
+		@media screen and (min-width: 1366px) {
+			width: 20%;
+		}
+	}
+
+	&__name-user {
+		padding-inline-start: 3vw;
+		@include mixins.fontHeading(1rem, 700);
+		overflow: hidden;
+
+		@media screen and (min-width: 768px) {
+			font-size: 2rem;
+		}
+
+		@media screen and (min-width: 1366px) {
+			font-size: 1.3rem;
+			padding-inline-start: 2vw;
+		}
+	}
+}

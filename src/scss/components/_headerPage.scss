@@ -1,0 +1,13 @@
+@use "../scss-utils/mixins" as mixins;
+@use "../scss-utils/variables" as var;
+@use "../scss-utils/inheritance";
+
+.header-page {
+	@include mixins.dimension(100%, 8vh);
+	padding: 10px;
+	@include mixins.flex(space-between, center);
+
+	&__button-area {
+		@include mixins.flex(center, center);
+	}
+}

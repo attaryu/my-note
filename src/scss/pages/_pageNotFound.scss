@@ -1,0 +1,25 @@
+@use "../scss-utils/mixins" as mixins;
+@use "../scss-utils/variables" as var;
+@use "../scss-utils/inheritance";
+
+.page-not-found {
+	@include mixins.dimension(100%, 91vh);
+	@include mixins.flex(center, center, column);
+
+	&__image {
+		width: 65%;
+	}
+
+	&__title {
+		margin-block: 7vh 4vh;
+		@include mixins.fontHeading(1.55rem, 800);
+	}
+
+	&__button {
+		@extend %button-primary;
+		@include mixins.dimension(35%, 5vh);
+		color: white;
+		border-radius: 100px;
+		font-weight: 600;
+	}
+}

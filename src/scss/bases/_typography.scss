@@ -1,0 +1,47 @@
+@use "../scss-utils/mixins" as mixins;
+
+@font-face {
+	font-family: "Outfit";
+	src: url("../../fonts/Outfit/Outfit-Variable.woff2") format("woff2"),
+		url("../../fonts/Outfit/Outfit-Variable.woff") format("woff"),
+		url("../../fonts/Outfit/Outfit-Variable.ttf") format("truetype");
+	font-weight: 100 900;
+	font-display: swap;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Poppins";
+	src: url("../../fonts/Poppins/Poppins-Variable.woff2") format("woff2"),
+		url("../../fonts/Poppins/Poppins-Variable.woff") format("woff"),
+		url("../../fonts/Poppins/Poppins-Variable.ttf") format("truetype");
+	font-weight: 100 900;
+	font-display: swap;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Chillax";
+	src: url("../../fonts/Chillax/Chillax-Variable.woff2") format("woff2"),
+		url("../../fonts/Chillax/Chillax-Variable.woff") format("woff"),
+		url("../../fonts/Chillax/Chillax-Variable.ttf") format("truetype");
+	font-weight: 200 700;
+	font-display: swap;
+	font-style: normal;
+}
+
+body {
+	@include mixins.fontParagraph(16px, 400);
+
+	@media screen and (min-width: 768px) {
+		font-size: 17px;
+	}
+
+	@media screen and (min-width: 1366px) {
+		font-size: 18px;
+	}
+
+	@media screen and (min-width: 1920px) {
+		font-size: 20px;
+	}
+}

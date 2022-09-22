@@ -1,0 +1,26 @@
+@use "../scss-utils/mixins" as mixins;
+@use "../scss-utils/variables" as var;
+
+.search-bar {
+	@include mixins.dimension(100%, 6vh);
+	@include mixins.flex(space-evenly, center);
+	background-color: white;
+	border-radius: 6px;
+
+	@media screen and (min-width: 1366px) {
+		padding-inline: 10px;
+		justify-content: flex-start;
+	}
+
+	&__input {
+		all: unset;
+		@include mixins.dimension(80%, 100%);
+		padding: 5px;
+		@include mixins.fontParagraph(0.8rem, 500);
+
+		@media screen and (min-width: 1366px) {
+			width: 50%;
+			margin-inline-start: 10px;
+		}
+	}
+}

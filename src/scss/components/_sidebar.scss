@@ -1,0 +1,17 @@
+@use "../scss-utils/mixins" as mixins;
+@use "../scss-utils/variables" as var;
+
+.side-bar {
+	@include mixins.dimension(100%, 9vh);
+	@include mixins.positioning(fixed, false, false, 0);
+	@include mixins.flex(space-evenly, center);
+	background-color: var.$primary-active;
+	z-index: 10;
+
+	@media screen and (min-width: 1366px) {
+		height: 100%;
+		position: relative;
+		@include mixins.flex(flex-start, center, column);
+		background-color: var.$primary;
+	}
+}
